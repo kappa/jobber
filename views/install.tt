@@ -1,0 +1,6 @@
+<h2>Enter password</h2>
+
+<form method="POST">Password:<input type="password" name="password"><input type="submit"></form>
+<br>
+
+<font color="red">Attention! All databases will be removed</font>

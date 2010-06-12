@@ -1,0 +1,8 @@
+<h2>If you want to add your own job...</h2>
+You can do it <a href="/add">here</a>
+
+<h2>List of jobs</h2>
+
+<table cellspacing="8">
+<% jobs %>
+</table>

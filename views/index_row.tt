@@ -1,0 +1,20 @@
+<tr>
+    <td>
+	<b><% name %></b>
+    </td>
+    <td>
+	<% salary %>
+    </td>
+    <td>
+	<% date %>
+    </td>
+    <td>
+	<% city %>
+    </td>
+    <td>
+	<% country %>
+    </td>
+    <td>
+	<a href="/vacancy/<% id %>">read more...</a>
+    </td>
+</tr>

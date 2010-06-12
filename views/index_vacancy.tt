@@ -1,0 +1,110 @@
+<tr>
+    <td>
+	Name:
+    </td>
+    <td>
+	<b><% name %></b>
+    </td>
+</tr>
+<tr>
+    <td>
+	salary
+    </td>
+    <td>
+	<% salary %>/<% salary %>
+    </td>
+</tr>
+<tr>
+    <td>
+	description
+    </td>
+    <td>
+	<% description %>
+    </td>
+</tr>
+<tr>
+    <td>
+	date
+    </td>
+    <td>
+	<% date %>
+    </td>
+</tr>
+<tr>
+    <td>
+	city
+    </td>
+    <td>
+	<% city %>
+    </td>
+</tr>
+<tr>
+    <td>
+	country
+    </td>
+    <td>
+	<% country %>
+    </td>
+</tr>
+<tr>
+    <td>
+	experense
+    </td>
+    <td>
+	<% experense %>
+    </td>
+</tr>
+<tr>
+    <td>
+	schedule
+    </td>
+    <td>
+	<% schedule %>
+    </td>
+</tr>
+<tr>
+    <td>
+	employment
+    </td>
+    <td>
+	<% employment %>
+    </td>
+</tr>
+<tr>
+    <td>
+	owner's email
+    </td>
+    <td>
+	<% owner_email %>
+    </td>
+</tr>
+<tr>
+    <td>
+	owner's company name
+    </td>
+    <td>
+	<% owner_company_name %>
+    </td>
+</tr>
+<tr>
+    <td>
+	owner's phone
+    </td>
+    <td>
+	<% owner_phone %>
+    </td>
+</tr>
+<tr>
+    <td>
+	owner's site
+    </td>
+    <td>
+	<% owner_site %>
+    </td>
+</tr>
+
+<tr colspan="2">
+    <td>
+	<a href="/">back to main page</a>
+    </td>
+</tr>

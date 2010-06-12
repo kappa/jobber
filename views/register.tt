@@ -1,0 +1,93 @@
+<h2>Reister new vacancy</h2>
+
+<form method="post">
+
+    Vacancy name:<br>
+    <input name="vac_name" style="width:340px;"> &nbsp;
+    <small>ex: Need perl developer for interesting fulltime job</small><br>
+
+    Vacancy description:<br>
+    <textarea name="vac_description" style="width:340px; height:50px;"></textarea><br>
+
+    Salary:<br>
+    <input name="vac_salary" style="width:340px;"> &nbsp;
+    <small>ex: "1000$" or "200 EUR"</small><br>
+
+    Experense:<br>
+    <input name="vac_experense" style="width:340px;"> &nbsp;
+    <small>ex: 2 year exp.</small><br>
+
+    Schedule:<br>
+    <input type="radio" name="vac_schedule" value="full day">full day
+    <input type="radio" name="vac_schedule" value="flexible schedule">flexible schedule
+    <br>
+    
+    Employment:<br> 
+    <input type="radio" name="vac_employment" value="full-time">full-time
+    <input type="radio" name="vac_employment" value="part-time">part-time
+    <input type="radio" name="vac_employment" value="project work">project work
+    <br>
+    
+    City:<br>
+    <input name="vac_city" style="width:340px;"><br>
+
+    Country:<br>
+    <input name="vac_country" style="width:340px;"><br>
+
+    Live time:<br>
+    <select name="vac_livetime">
+	<option value="7">1 week</option>
+	<option value="14">2 weeks</option>
+	<option value="21">3 weeks</option>
+	<option value="31">1 month</option>
+	<option value="62">2 month</option>
+    </select>
+    <br>
+
+    <hr>
+    
+    Your e-mail:<br>
+    <input name="vac_owner_email" style="width:340px;"><br>
+
+    Write your new password here:<br>
+    <input type="password" name="vac_owner_password" style="width:340px;"><br>
+
+    Retypr this password again:<br>
+    <input type="password" name="vac_owner_password_check" style="width:340px;"><br>
+
+    Company name:<br>
+    <input name="vac_owner_company_name" style="width:340px;"><br>
+    
+    Your name:<br>
+    <input name="vac_owner_name" style="width:340px;"><br>
+
+    Your phone:<br>
+    <input name="vac_owner_phone" style="width:340px;"><br>
+
+    Your site:<br>
+    <input name="vac_owner_site" style="width:340px;"><br>
+
+    Logo url:<br>
+    <input name="vac_owner_logo" style="width:340px;"><br>
+
+    The Joel test:<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[0]">Do you use source control?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[1]">Can you make a build in one step?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[2]">Do you make daily builds?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[3]">Do you have a bug database?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[4]">Do you fix bugs before writing new code?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[5]">Do you have an up-to-date schedule?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[6]">Do you have a spec?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[7]">Do programmers have quiet working conditions?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[8]">Do you use the best tools money can buy?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[9]">Do you have testers?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[10]">Do new candidates write code during their interview?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[11]">Do you do hallway usability testing?<br>
+
+    Do you want to show your Joel test in vacancy page?<br>
+    <input type="checkbox" name="vac_owner_jt_show" value="1" style="width:340px;">show my Joel test in vacancy page<br>
+
+    <input type=submit>
+
+
+</form>
