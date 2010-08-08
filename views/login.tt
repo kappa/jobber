@@ -1,3 +1,38 @@
-<h2>Login</h2>
+<h2>Please, enter login and password</h2>
 
-<% login %>
+<p>
+<form method="post" enctype="multipart/form-data">
+<table>
+    <tr>
+	<th>
+	    e-mail
+        </th>
+	<td>
+	    <input type="login" name="login" id="login">
+        </td>
+    </tr>
+    <tr>
+	<th>
+	    password
+        </th>
+	<td>
+	    <input type="password" name="password">
+        </td>
+    </tr>
+    <tr>
+	<td>
+        </td>
+	<td>
+	    <input type="submit" value="Login">
+        </td>
+    </tr>
+</table>
+</p>
+
+<script type="text/javascript">
+function setFocus()
+{
+    document.getElementById("login").focus();
+}
+setFocus();
+</script>

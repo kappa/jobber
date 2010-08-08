@@ -10,11 +10,16 @@
     </td>
     <td>
 	<% city %>
-    </td>
-    <td>
-	<% country %>
+	<% if( country ) %>
+	/ <% country %>
+	<% end %>
     </td>
     <td>
 	<a href="/vacancy/<% id %>">read more...</a>
     </td>
+<% if(user_type == 15) %>
+    <td>
+	<a href="/delete/<% id %>">delete</a>
+    </td>
+<% end %>
 </tr>

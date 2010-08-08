@@ -16,3 +16,10 @@
 [12200]  warn @0.001845> [hit #5] Use of uninitialized value in concatenation (.) or string at /home/ivanoff/work/projects/perldancer/jobber/lib/jobber.pm line 21. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
 [12214]  warn @0.007528> [hit #1] Use of uninitialized value in concatenation (.) or string at /home/ivanoff/work/projects/perldancer/jobber/lib/jobber.pm line 21. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
 [12223]  warn @0.013429> [hit #1] Use of uninitialized value in concatenation (.) or string at /home/ivanoff/work/projects/perldancer/jobber/lib/jobber.pm line 21. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
+[4752]  warn @0.524468> [hit #10] DBD::SQLite::db do failed: table users has no column named usr_type at /home/ivanoff/work/projects/perldancer/2/jobber/lib/jobber.pm line 192. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
+[4752]  warn @0.494936> [hit #13] DBD::SQLite::db do failed: table users has no column named usr_type at /home/ivanoff/work/projects/perldancer/2/jobber/lib/jobber.pm line 192. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
+[4752]  warn @0.550465> [hit #16] DBD::SQLite::db do failed: table users has no column named usr_type at /home/ivanoff/work/projects/perldancer/2/jobber/lib/jobber.pm line 192. in /usr/local/share/perl/5.10.0/Dancer/Renderer.pm l. 119
+[6433]  warn @0.011662> [hit #3] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[6730]  warn @0.001650> [hit #19] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[12689]  warn @0.165130> [hit #1] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[12692]  warn @0.098998> [hit #11] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228

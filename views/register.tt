@@ -1,15 +1,15 @@
 <h2>Reister new vacancy</h2>
 
-<form method="post">
+<form method="post" onsubmit="return checkform(this);">
 
-    Vacancy name:<br>
-    <input name="vac_name" style="width:340px;"> &nbsp;
+    <font color="red"><b>*</b></font>Vacancy name:<br>
+    <input name="vac_name" id="vac_name" style="width:340px;"> &nbsp;
     <small>ex: Need perl developer for interesting fulltime job</small><br>
 
-    Vacancy description:<br>
+    <font color="red"><b>*</b></font>Vacancy description:<br>
     <textarea name="vac_description" style="width:340px; height:50px;"></textarea><br>
 
-    Salary:<br>
+    <font color="red"><b>*</b></font>Salary:<br>
     <input name="vac_salary" style="width:340px;"> &nbsp;
     <small>ex: "1000$" or "200 EUR"</small><br>
 
@@ -18,17 +18,17 @@
     <small>ex: 2 year exp.</small><br>
 
     Schedule:<br>
-    <input type="radio" name="vac_schedule" value="full day">full day
+    <input type="radio" checked name="vac_schedule" value="full day">full day
     <input type="radio" name="vac_schedule" value="flexible schedule">flexible schedule
     <br>
     
     Employment:<br> 
-    <input type="radio" name="vac_employment" value="full-time">full-time
+    <input type="radio" checked name="vac_employment" value="full-time">full-time
     <input type="radio" name="vac_employment" value="part-time">part-time
     <input type="radio" name="vac_employment" value="project work">project work
     <br>
-    
-    City:<br>
+
+    <font color="red"><b>*</b></font>City:<br>
     <input name="vac_city" style="width:340px;"><br>
 
     Country:<br>
@@ -46,20 +46,20 @@
 
     <hr>
     
-    Your e-mail:<br>
+    <font color="red"><b>*</b></font>Your e-mail:<br>
     <input name="vac_owner_email" style="width:340px;"><br>
 
-    Write your new password here:<br>
+    <font color="red"><b>*</b></font>Write your new password here:<br>
     <input type="password" name="vac_owner_password" style="width:340px;"><br>
 
-    Retypr this password again:<br>
+    <font color="red"><b>*</b></font>Retype this password again:<br>
     <input type="password" name="vac_owner_password_check" style="width:340px;"><br>
+    
+    <font color="red"><b>*</b></font>Your name:<br>
+    <input name="vac_owner_name" style="width:340px;"><br>
 
     Company name:<br>
     <input name="vac_owner_company_name" style="width:340px;"><br>
-    
-    Your name:<br>
-    <input name="vac_owner_name" style="width:340px;"><br>
 
     Your phone:<br>
     <input name="vac_owner_phone" style="width:340px;"><br>
@@ -91,3 +91,60 @@
 
 
 </form>
+
+<script type="text/javascript">
+function checkform ( form )
+{
+    if (form.vac_name.value == "") {
+	alert( "Please enter name of vacancy." );
+	form.vac_name.focus();
+        return false ;
+    }
+    if (form.vac_description.value == "") {
+	alert( "Please enter vacancy description." );
+	form.vac_description.focus();
+        return false ;
+    }
+    if (form.vac_salary.value == "") {
+	alert( "Please enter salary." );
+	form.vac_salary.focus();
+        return false ;
+    }
+    if (form.vac_city.value == "") {
+	alert( "Please enter city." );
+	form.vac_city.focus();
+        return false ;
+    }
+    if (form.vac_owner_email.value == "") {
+	alert( "Please enter your e-mail address." );
+	form.vac_owner_email.focus();
+        return false ;
+    }
+    if (form.vac_owner_password.value == "") {
+	alert( "Please enter password." );
+	form.vac_owner_password.focus();
+        return false ;
+    }
+    if (form.vac_owner_password_check.value == "") {
+	alert( "Please retype password." );
+	form.vac_owner_password_check.focus();
+        return false ;
+    }
+    if (form.vac_owner_password.value != form.vac_owner_password_check.value) {
+	alert( "Passwords do not match" );
+	form.vac_owner_password.focus();
+        return false ;
+    }
+    if (form.vac_owner_name.value == "") {
+	alert( "Please enter your name." );
+	form.vac_owner_name.focus();
+        return false ;
+    }
+    return true ;
+}
+function setFocus()
+{
+    document.getElementById("vac_name").focus();
+}
+setFocus();
+</script>
