@@ -1,0 +1,86 @@
+<h2>Edit Profile</h2>
+
+<form method="post" onsubmit="return checkform(this);">
+    
+    <font color="red"><b>*</b></font>Your e-mail:<br>
+    <input name="vac_owner_email" id="vac_owner_email" value="<% i.usr_email %>" style="width:340px;"><br>
+
+    <font color="red"><b>*</b></font>Your new password here:<br>
+    <input type="password" name="vac_owner_password" style="width:340px;"><br>
+
+    <font color="red"><b>*</b></font>Retype this password again:<br>
+    <input type="password" name="vac_owner_password_check" style="width:340px;"><br>
+    
+    <font color="red"><b>*</b></font>Your name:<br>
+    <input name="vac_owner_name" value="<% i.usr_name %>" style="width:340px;"><br>
+
+    Company name:<br>
+    <input name="vac_owner_company_name" value="<% i.usr_company_name %>" style="width:340px;"><br>
+
+    Your phone:<br>
+    <input name="vac_owner_phone" value="<% i.usr_phone %>" style="width:340px;"><br>
+
+    Your site:<br>
+    <input name="vac_owner_site" value="<% i.usr_site %>" style="width:340px;"><br>
+
+    Logo url:<br>
+    <input name="vac_owner_logo" value="<% i.usr_logo %>" style="width:340px;"><br>
+
+    The Joel test:<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[0]">Do you use source control?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[1]">Can you make a build in one step?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[2]">Do you make daily builds?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[3]">Do you have a bug database?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[4]">Do you fix bugs before writing new code?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[5]">Do you have an up-to-date schedule?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[6]">Do you have a spec?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[7]">Do programmers have quiet working conditions?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[8]">Do you use the best tools money can buy?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[9]">Do you have testers?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[10]">Do new candidates write code during their interview?<br>
+    <input type="checkbox" value="1" name="vac_owner_jt[11]">Do you do hallway usability testing?<br>
+
+    Do you want to show your Joel test in vacancy page?<br>
+    <input type="checkbox" name="vac_owner_jt_show" value="1" style="width:340px;">show my Joel test in vacancy page<br>
+
+    <input type=submit>
+
+
+</form>
+
+<script type="text/javascript">
+function checkform ( form )
+{
+    if (form.vac_owner_email.value == "") {
+	alert( "Please enter your e-mail address." );
+	form.vac_owner_email.focus();
+        return false ;
+    }
+    if (form.vac_owner_password.value == "") {
+	alert( "Please enter password." );
+	form.vac_owner_password.focus();
+        return false ;
+    }
+    if (form.vac_owner_password_check.value == "") {
+	alert( "Please retype password." );
+	form.vac_owner_password_check.focus();
+        return false ;
+    }
+    if (form.vac_owner_password.value != form.vac_owner_password_check.value) {
+	alert( "Passwords do not match" );
+	form.vac_owner_password.focus();
+        return false ;
+    }
+    if (form.vac_owner_name.value == "") {
+	alert( "Please enter your name." );
+	form.vac_owner_name.focus();
+        return false ;
+    }
+    return true ;
+}
+function setFocus()
+{
+    document.getElementById("vac_owner_email").focus();
+}
+setFocus();
+</script>

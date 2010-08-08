@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>jobber</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+<div align="right">
+    <a href="/">home</a> | 
+    <a href="/add">add vacancy</a> | 
+    <a href="/users">users</a> | 
+    <a href="/profile">profile</a> | 
+    <a href="/exit">exit</a>
+</div>
+<div><h1>jobber</h1></div>
+</div>
+<div id="content">
+<p><% content %></p>
+</div>
+<div id="footer">
+Powered by <a href="http://perldancer.org/">Dancer</a> 1.1803
+</div>
+</body>
+</html>

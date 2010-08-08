@@ -1,0 +1,32 @@
+<h2>Users</h2>
+
+<% IF users %>
+
+<table>
+<tr>
+    <th>id</th>
+    <th>email</th>
+    <th>name</th>
+    <th>company name</th>
+    <th>phone</th>
+    <th>site</th>
+    <th>type</th>
+    <th></th>
+    <th></th>
+</tr>
+<% FOREACH u IN users %>
+<tr>
+    <td><% u.usr_id %></td>
+    <td><% u.usr_email %></td>
+    <td><% u.usr_name %></td>
+    <td><% u.usr_company_name %></td>
+    <td><% u.usr_phone %></td>
+    <td><% u.usr_site %></td>
+    <td><% u.usr_type %></td>
+    <td><a href="/profile/<% u.usr_id %>">edit user</a></td>
+    <td><a href="/users/delete/<% u.usr_id %>">delete user and posts</a></td>
+</tr>
+<% end %>
+</table>
+
+<% end %>
