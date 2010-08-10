@@ -16,6 +16,7 @@
     <a href="/add">добавить вакансию</a> | 
     <a href="/users">пользователи</a> | 
     <a href="/profile">профайл</a> | 
+    <a href="/install">удалить все</a> | 
     <a href="/exit">выход</a>
 </div>
 <div><h2>Jobs.planetperl.ru - вакансии</h2></div>
