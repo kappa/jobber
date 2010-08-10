@@ -11,15 +11,14 @@
     <td>
 	<% city %>
 	<% if( country ) %>
-	/ <% country %>
 	<% end %>
     </td>
     <td>
-	<a href="/vacancy/<% id %>">read more...</a>
+	<a href="/vacancy/<% id %>">подробнее...</a>
     </td>
 <% if(user_type == 15) %>
     <td>
-	<a href="/delete/<% id %>">delete</a>
+	<a href="/delete/<% id %>">удалить</a>
     </td>
 <% end %>
 </tr>

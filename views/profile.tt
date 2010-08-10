@@ -2,46 +2,46 @@
 
 <form method="post" onsubmit="return checkform(this);">
     
-    <font color="red"><b>*</b></font>Your e-mail:<br>
+    <font color="red"><b>*</b></font>Ваш e-mail:<br>
     <input name="vac_owner_email" id="vac_owner_email" value="<% i.usr_email %>" style="width:340px;"><br>
 
-    <font color="red"><b>*</b></font>Your new password here:<br>
+    <font color="red"><b>*</b></font>Введите пароль:<br>
     <input type="password" name="vac_owner_password" style="width:340px;"><br>
 
-    <font color="red"><b>*</b></font>Retype this password again:<br>
+    <font color="red"><b>*</b></font>Повторите ввод пароля:<br>
     <input type="password" name="vac_owner_password_check" style="width:340px;"><br>
     
-    <font color="red"><b>*</b></font>Your name:<br>
+    <font color="red"><b>*</b></font>Ваше имя:<br>
     <input name="vac_owner_name" value="<% i.usr_name %>" style="width:340px;"><br>
 
-    Company name:<br>
+    Название компании:<br>
     <input name="vac_owner_company_name" value="<% i.usr_company_name %>" style="width:340px;"><br>
 
-    Your phone:<br>
+    Телефон:<br>
     <input name="vac_owner_phone" value="<% i.usr_phone %>" style="width:340px;"><br>
 
-    Your site:<br>
+    Ваш сайт:<br>
     <input name="vac_owner_site" value="<% i.usr_site %>" style="width:340px;"><br>
 
     Logo url:<br>
     <input name="vac_owner_logo" value="<% i.usr_logo %>" style="width:340px;"><br>
 
     The Joel test:<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[0]">Do you use source control?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[1]">Can you make a build in one step?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[2]">Do you make daily builds?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[3]">Do you have a bug database?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[4]">Do you fix bugs before writing new code?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[5]">Do you have an up-to-date schedule?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[6]">Do you have a spec?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[7]">Do programmers have quiet working conditions?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[8]">Do you use the best tools money can buy?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[9]">Do you have testers?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[10]">Do new candidates write code during their interview?<br>
-    <input type="checkbox" value="1" name="vac_owner_jt[11]">Do you do hallway usability testing?<br>
+    <input type="checkbox" value="1" <% IF (jt(0)) %>checked<% END %> name="vac_owner_jt[0]">Do you use source control?<br>
+    <input type="checkbox" value="1" <% IF (jt(1)) %>checked<% END %> name="vac_owner_jt[1]">Can you make a build in one step?<br>
+    <input type="checkbox" value="1" <% IF (jt(2)) %>checked<% END %> name="vac_owner_jt[2]">Do you make daily builds?<br>
+    <input type="checkbox" value="1" <% IF (jt(3)) %>checked<% END %> name="vac_owner_jt[3]">Do you have a bug database?<br>
+    <input type="checkbox" value="1" <% IF (jt(4)) %>checked<% END %> name="vac_owner_jt[4]">Do you fix bugs before writing new code?<br>
+    <input type="checkbox" value="1" <% IF (jt(5)) %>checked<% END %> name="vac_owner_jt[5]">Do you have an up-to-date schedule?<br>
+    <input type="checkbox" value="1" <% IF (jt(6)) %>checked<% END %> name="vac_owner_jt[6]">Do you have a spec?<br>
+    <input type="checkbox" value="1" <% IF (jt(7)) %>checked<% END %> name="vac_owner_jt[7]">Do programmers have quiet working conditions?<br>
+    <input type="checkbox" value="1" <% IF (jt(8)) %>checked<% END %> name="vac_owner_jt[8]">Do you use the best tools money can buy?<br>
+    <input type="checkbox" value="1" <% IF (jt(9)) %>checked<% END %> name="vac_owner_jt[9]">Do you have testers?<br>
+    <input type="checkbox" value="1" <% IF (jt(10)) %>checked<% END %> name="vac_owner_jt[10]">Do new candidates write code during their interview?<br>
+    <input type="checkbox" value="1" <% IF (jt(11)) %>checked<% END %> name="vac_owner_jt[11]">Do you do hallway usability testing?<br>
 
-    Do you want to show your Joel test in vacancy page?<br>
-    <input type="checkbox" name="vac_owner_jt_show" value="1" style="width:340px;">show my Joel test in vacancy page<br>
+    Хотите, чтобы ваш Joel test был на страницах ваших вакансий?<br>
+    <input type="checkbox" <% IF (i.usr_jt_show) %>checked<% END %> name="vac_owner_jt_show" value="1" style="width:340px;">show my Joel test in vacancy page<br>
 
     <input type=submit>
 
@@ -52,27 +52,27 @@
 function checkform ( form )
 {
     if (form.vac_owner_email.value == "") {
-	alert( "Please enter your e-mail address." );
+	alert( "Пожалуста, введите e-mail." );
 	form.vac_owner_email.focus();
         return false ;
     }
     if (form.vac_owner_password.value == "") {
-	alert( "Please enter password." );
+	alert( "Пожалуста, введите пароль" );
 	form.vac_owner_password.focus();
         return false ;
     }
     if (form.vac_owner_password_check.value == "") {
-	alert( "Please retype password." );
+	alert( "Пожалуста, повторите ввод пароля" );
 	form.vac_owner_password_check.focus();
         return false ;
     }
     if (form.vac_owner_password.value != form.vac_owner_password_check.value) {
-	alert( "Passwords do not match" );
+	alert( "А пароли не совпадают" );
 	form.vac_owner_password.focus();
         return false ;
     }
     if (form.vac_owner_name.value == "") {
-	alert( "Please enter your name." );
+	alert( "Пожалуста, введите Ваше имя" );
 	form.vac_owner_name.focus();
         return false ;
     }

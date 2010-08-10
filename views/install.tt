@@ -1,6 +1,8 @@
-<h2>Enter password</h2>
+<h2>Введите пароль</h2>
 
-<form method="POST">Password:<input type="password" name="password"><input type="submit"></form>
+<form method="POST">Пароль:<input type="password" name="password"><input type="submit"></form>
 <br>
 
-<font color="red">Attention! All databases will be removed</font>
+<font color="red">Ахтунг! Все базы будут обновлены. Информация будет утеряна.
+Логин/пароль админа будут следующими: admin@localhost/admin
+</font>

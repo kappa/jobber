@@ -9,7 +9,7 @@ use String::Clean::XSS;
 
 use Data::Dump qw(dump);
 
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 my ($dbh, $r);
 my $user_login_type = 0;
@@ -58,7 +58,7 @@ before sub {
 =index page
 =cut
 get '/' => sub {
-    $r = sql("SELECT * FROM vacancies ORDER BY vac_date DESC");
+    $r = sql("SELECT * FROM vacancies WHERE vac_date_to>=? ORDER BY vac_date DESC", time);
     my $table;
     foreach my $row (@$r) {
 	my ($sec, $min, $hour, $day, $month, $year) = (localtime($row->{vac_date}))[0,1,2,3,4,5,6];
@@ -133,7 +133,30 @@ get '/profile/:id' => sub {
 	$r = sql("SELECT * FROM users WHERE usr_id=?", params->{id});
 	template 'profile', {
 	    i => sub{@$r},
+	    jt => sub{my $_=shift; return substr ($r->[0]{usr_jt}, $_, 1) if $r->[0]{usr_jt} && length ($r->[0]{usr_jt}) >$_ },
 	};
+    } else {
+	redirect uri_for('/login');
+    }
+};
+
+post '/profile/:id' => sub {
+    if (params->{id} =~ /^\d+$/) {
+	$r = sql("SELECT auth_usr_id FROM auth WHERE auth_value=? AND auth_usr_id=?", cookies->{user}{value}, params->{id});
+	if ( $user_login_type != 15 && $r->[0]{auth_usr_id} != params->{id} ) {
+	    redirect uri_for('/login');
+	}
+	my $vac_owner_jt;
+	$vac_owner_jt .= params->{"vac_owner_jt[$_]"} ? params->{"vac_owner_jt[$_]"} : 0 for (0..11);
+	sql("UPDATE users SET usr_email=?, usr_password=?, usr_company_name=?, usr_name=?, 
+		usr_phone=?, usr_site=?, usr_logo=?, usr_jt=?, usr_jt_show=?
+		WHERE usr_id=?",
+		params->{vac_owner_email}, md5_hex(params->{vac_owner_password}), 
+		params->{vac_owner_company_name}, params->{vac_owner_name}, params->{vac_owner_phone}, 
+		params->{vac_owner_site}, params->{vac_owner_logo}, $vac_owner_jt, 
+		params->{vac_owner_jt_show}, params->{id} );
+
+	redirect uri_for('/profile/'.params->{id});
     } else {
 	redirect uri_for('/login');
     }
@@ -184,6 +207,8 @@ get '/vacancy/:code' => sub {
 		'owner_company_name' => $row->{usr_company_name},
 		'owner_phone' => $row->{usr_phone},
 		'owner_site' => $row->{usr_site},
+		i => sub{@$r},
+		jt => sub{my $_=shift; return substr ($r->[0]{usr_jt}, $_, 1) if $r->[0]{usr_jt} && length ($r->[0]{usr_jt}) >$_ },
 	    },
 	    {layout => 0};
 	}
@@ -206,7 +231,12 @@ get '/delete/:code' => sub {
 =add vacancy
 =cut
 get '/add' => sub {
-    template 'register';
+    $r = sql("SELECT * FROM auth a JOIN users u ON (a.auth_usr_id=u.usr_id) 
+		WHERE a.auth_date>? AND a.auth_value=?", time, cookies->{user}{value});
+    my $usr_id = $r->[0]{usr_id};
+    template 'register', {
+	usr_id => $usr_id,
+    };
 };
 
 post '/add' => sub {
@@ -222,8 +252,14 @@ post '/add' => sub {
 
     $vac_owner_jt .= params->{"vac_owner_jt[$_]"} ? params->{"vac_owner_jt[$_]"} : 0 for (0..11);
 
-    $r = sql("SELECT * FROM users where usr_email=? and usr_password=?", 
-	    params->{vac_owner_email}, md5_hex(params->{vac_owner_password}) );
+    $r = sql("SELECT * FROM auth a JOIN users u ON (a.auth_usr_id=u.usr_id) 
+		WHERE a.auth_date>? AND a.auth_value=?", time, cookies->{user}{value});
+    if($r->[0]) {
+	$r = sql("SELECT * FROM users where usr_id=?", $r->[0]{usr_id});
+    } else {
+	$r = sql("SELECT * FROM users where usr_email=? and usr_password=?", 
+		params->{vac_owner_email}, md5_hex(params->{vac_owner_password}) );
+    }
     my $row = $r->[0];
     
     if($row->{usr_id}) {

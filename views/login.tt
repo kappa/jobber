@@ -1,4 +1,4 @@
-<h2>Please, enter login and password</h2>
+<h2>Пожалуйста, введите e-mail и пароль</h2>
 
 <p>
 <form method="post" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
     </tr>
     <tr>
 	<th>
-	    password
+	    пароль
         </th>
 	<td>
 	    <input type="password" name="password">

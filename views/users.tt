@@ -1,4 +1,4 @@
-<h2>Users</h2>
+<h2>Пользователи</h2>
 
 <% IF users %>
 
@@ -6,11 +6,11 @@
 <tr>
     <th>id</th>
     <th>email</th>
-    <th>name</th>
-    <th>company name</th>
-    <th>phone</th>
-    <th>site</th>
-    <th>type</th>
+    <th>имя</th>
+    <th>название</th>
+    <th>телефон</th>
+    <th>сайт</th>
+    <th>тип пользователя</th>
     <th></th>
     <th></th>
 </tr>

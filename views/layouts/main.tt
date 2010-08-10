@@ -1,24 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
 <head>
-<title>jobber</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="icon" href="http://planetperl.ru/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://planetperl.ru/favicon.ico" type="image/x-icon">
+
+    <title>Perl вакансии. Jobs.planetperl.ru</title>
 </head>
 <body>
-<div>
-<div align="right">
-    <a href="/">home</a> | 
-    <a href="/add">add vacancy</a> | 
-    <a href="/login">login</a>
+<div id="container">
+<div align="left">
+    <a href="/">на главную</a> | 
+    <a href="/add">добавить вакансию</a> | 
+    <a href="/login">вход</a>
 </div>
-<div><h1>jobber</h1></div>
+<div><h2>Jobs.planetperl.ru - вакансии</h2></div>
 </div>
 <div id="content">
 <p><% content %></p>
 </div>
 <div id="footer">
-Powered by <a href="http://perldancer.org/">Dancer</a> 1.1803
+Powered by <a href="http://perldancer.org/">Dancer</a> 1.1803. "Perl Mova 2010". <a target="blank" href="http://ivanoff.org.ru">ivanoff</a>
 </div>
 </body>
 </html>

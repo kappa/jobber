@@ -23,3 +23,14 @@
 [6730]  warn @0.001650> [hit #19] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
 [12689]  warn @0.165130> [hit #1] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
 [12692]  warn @0.098998> [hit #11] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5136]  warn @0.541237> [hit #1] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5535]  warn @0.207599> [hit #10] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5626]  warn @0.123222> [hit #45] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5626]  warn @0.127578> [hit #48] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5626]  warn @0.111128> [hit #51] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5626]  warn @0.115737> [hit #66] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5879]  warn @0.128536> [hit #5] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5879]  warn @0.137587> [hit #10] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5883]  warn @0.208841> [hit #1] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5887]  warn @0.195229> [hit #1] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228
+[5981]  warn @0.353420> [hit #7] Dancer::Logger in /usr/local/share/perl/5.10.0/Dancer/Route.pm l. 228

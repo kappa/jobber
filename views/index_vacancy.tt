@@ -1,6 +1,6 @@
 <tr>
     <td>
-	Name:
+	Название:
     </td>
     <td>
 	<b><% name %></b>
@@ -8,15 +8,15 @@
 </tr>
 <tr>
     <td>
-	salary
+	Уровень зарплаты
     </td>
     <td>
-	<% salary %>/<% salary %>
+	<% salary %>
     </td>
 </tr>
 <tr>
     <td>
-	description
+	Описание
     </td>
     <td>
 	<% description %>
@@ -24,7 +24,7 @@
 </tr>
 <tr>
     <td>
-	date
+	Дата публикации
     </td>
     <td>
 	<% date %>
@@ -32,31 +32,35 @@
 </tr>
 <tr>
     <td>
-	city
+	Город
     </td>
     <td>
 	<% city %>
     </td>
 </tr>
+<% IF (country) %>
 <tr>
     <td>
-	country
+	Страна
     </td>
     <td>
 	<% country %>
     </td>
 </tr>
+<% END %>
+<% IF (experense) %>
 <tr>
     <td>
-	experense
+	Опыт работы
     </td>
     <td>
 	<% experense %>
     </td>
 </tr>
+<% END %>
 <tr>
     <td>
-	schedule
+	График
     </td>
     <td>
 	<% schedule %>
@@ -64,7 +68,7 @@
 </tr>
 <tr>
     <td>
-	employment
+	Занятость
     </td>
     <td>
 	<% employment %>
@@ -72,39 +76,66 @@
 </tr>
 <tr>
     <td>
-	owner's email
+	email
     </td>
     <td>
 	<% owner_email %>
     </td>
 </tr>
+<% IF (owner_company_name) %>
 <tr>
     <td>
-	owner's company name
+	Название компании
     </td>
     <td>
 	<% owner_company_name %>
     </td>
 </tr>
+<% END %>
+<% IF (owner_phone) %>
 <tr>
     <td>
-	owner's phone
+	Телефон
     </td>
     <td>
 	<% owner_phone %>
     </td>
 </tr>
+<% END %>
+<% IF (owner_site) %>
 <tr>
     <td>
-	owner's site
+	Сайт
     </td>
     <td>
 	<% owner_site %>
     </td>
 </tr>
+<% END %>
+<% IF (i.usr_jt_show) %>
+<tr>
+    <td>
+	The Joel test
+    </td>
+    <td>
+    ( <% IF (jt(0)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you use source control?<br>
+    ( <% IF (jt(1)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Can you make a build in one step?<br>
+    ( <% IF (jt(2)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you make daily builds?<br>
+    ( <% IF (jt(3)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you have a bug database?<br>
+    ( <% IF (jt(4)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you fix bugs before writing new code?<br>
+    ( <% IF (jt(5)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you have an up-to-date schedule?<br>
+    ( <% IF (jt(6)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you have a spec?<br>
+    ( <% IF (jt(7)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do programmers have quiet working conditions?<br>
+    ( <% IF (jt(8)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you use the best tools money can buy?<br>
+    ( <% IF (jt(9)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you have testers?<br>
+    ( <% IF (jt(10)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do new candidates write code during their interview?<br>
+    ( <% IF (jt(11)) %>+<% ELSE %>&nbsp;&nbsp;&nbsp;<% END %> ) Do you do hallway usability testing?<br>
+    </td>
+</tr>
+<% END %>
 
 <tr colspan="2">
     <td>
-	<a href="/">back to main page</a>
+	<a href="/">назад на главную</a>
     </td>
 </tr>

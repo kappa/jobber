@@ -1,70 +1,71 @@
-<h2>Reister new vacancy</h2>
+<h2>Добавение вакансии</h2>
 
 <form method="post" onsubmit="return checkform(this);">
 
-    <font color="red"><b>*</b></font>Vacancy name:<br>
+    <font color="red"><b>*</b></font>Название вакансии:<br>
     <input name="vac_name" id="vac_name" style="width:340px;"> &nbsp;
-    <small>ex: Need perl developer for interesting fulltime job</small><br>
+    <small>ex: Нужен перл-программист на полную занятость</small><br>
 
-    <font color="red"><b>*</b></font>Vacancy description:<br>
+    <font color="red"><b>*</b></font>Описание вакансии:<br>
     <textarea name="vac_description" style="width:340px; height:50px;"></textarea><br>
 
-    <font color="red"><b>*</b></font>Salary:<br>
+    <font color="red"><b>*</b></font>Уровень оплаты:<br>
     <input name="vac_salary" style="width:340px;"> &nbsp;
     <small>ex: "1000$" or "200 EUR"</small><br>
 
-    Experense:<br>
+    Опыт работы:<br>
     <input name="vac_experense" style="width:340px;"> &nbsp;
-    <small>ex: 2 year exp.</small><br>
+    <small>пр: 2 года.</small><br>
 
-    Schedule:<br>
+    График:<br>
     <input type="radio" checked name="vac_schedule" value="full day">full day
     <input type="radio" name="vac_schedule" value="flexible schedule">flexible schedule
     <br>
     
-    Employment:<br> 
+    Занятость:<br> 
     <input type="radio" checked name="vac_employment" value="full-time">full-time
     <input type="radio" name="vac_employment" value="part-time">part-time
     <input type="radio" name="vac_employment" value="project work">project work
     <br>
 
-    <font color="red"><b>*</b></font>City:<br>
+    <font color="red"><b>*</b></font>Город:<br>
     <input name="vac_city" style="width:340px;"><br>
 
-    Country:<br>
+    Страна:<br>
     <input name="vac_country" style="width:340px;"><br>
 
-    Live time:<br>
+    Срок размещения:<br>
     <select name="vac_livetime">
-	<option value="7">1 week</option>
-	<option value="14">2 weeks</option>
-	<option value="21">3 weeks</option>
-	<option value="31">1 month</option>
-	<option value="62">2 month</option>
+	<option value="7">1 неделя</option>
+	<option value="14">2 недели</option>
+	<option value="21">3 недели</option>
+	<option value="31">1 месяц</option>
+	<option value="62">2 месяца</option>
     </select>
     <br>
 
+<%UNLESS (usr_id)%>
     <hr>
     
-    <font color="red"><b>*</b></font>Your e-mail:<br>
+    <font color="red"><b>*</b></font>Ваш e-mail:<br>
     <input name="vac_owner_email" style="width:340px;"><br>
 
-    <font color="red"><b>*</b></font>Write your new password here:<br>
+    <font color="red"><b>*</b></font>Введите пароль:<br>
     <input type="password" name="vac_owner_password" style="width:340px;"><br>
 
-    <font color="red"><b>*</b></font>Retype this password again:<br>
+    <font color="red"><b>*</b></font>Повторите ввод пароля:<br>
     <input type="password" name="vac_owner_password_check" style="width:340px;"><br>
     
-    <font color="red"><b>*</b></font>Your name:<br>
+    <font color="red"><b>*</b></font>Ваше имя:<br>
     <input name="vac_owner_name" style="width:340px;"><br>
 
-    Company name:<br>
+    Название компании:<br>
     <input name="vac_owner_company_name" style="width:340px;"><br>
 
-    Your phone:<br>
+    Телефон:<br>
     <input name="vac_owner_phone" style="width:340px;"><br>
 
-    Your site:<br>
+    Ваш сайт:<br>
     <input name="vac_owner_site" style="width:340px;"><br>
 
     Logo url:<br>
@@ -84,8 +85,9 @@
     <input type="checkbox" value="1" name="vac_owner_jt[10]">Do new candidates write code during their interview?<br>
     <input type="checkbox" value="1" name="vac_owner_jt[11]">Do you do hallway usability testing?<br>
 
-    Do you want to show your Joel test in vacancy page?<br>
+    Хотите, чтобы ваш Joel test был на страницах ваших вакансий?<br>
     <input type="checkbox" name="vac_owner_jt_show" value="1" style="width:340px;">show my Joel test in vacancy page<br>
+<% END %>
 
     <input type=submit>
 
@@ -96,50 +98,53 @@
 function checkform ( form )
 {
     if (form.vac_name.value == "") {
-	alert( "Please enter name of vacancy." );
+	alert( "Пожалуста, введите название вакансии" );
 	form.vac_name.focus();
         return false ;
     }
     if (form.vac_description.value == "") {
-	alert( "Please enter vacancy description." );
+	alert( "Пожалуста, введите описание" );
 	form.vac_description.focus();
         return false ;
     }
     if (form.vac_salary.value == "") {
-	alert( "Please enter salary." );
+	alert( "Пожалуста, введите уровень зарплаты" );
 	form.vac_salary.focus();
         return false ;
     }
     if (form.vac_city.value == "") {
-	alert( "Please enter city." );
+	alert( "Пожалуста, введите город" );
 	form.vac_city.focus();
         return false ;
     }
+<%UNLESS (usr_id)%>
     if (form.vac_owner_email.value == "") {
-	alert( "Please enter your e-mail address." );
+	alert( "Пожалуста, введите e-mail." );
 	form.vac_owner_email.focus();
         return false ;
     }
     if (form.vac_owner_password.value == "") {
-	alert( "Please enter password." );
+	alert( "Пожалуста, введите пароль" );
 	form.vac_owner_password.focus();
         return false ;
     }
     if (form.vac_owner_password_check.value == "") {
-	alert( "Please retype password." );
+	alert( "Пожалуста, повторите ввод пароля" );
 	form.vac_owner_password_check.focus();
         return false ;
     }
     if (form.vac_owner_password.value != form.vac_owner_password_check.value) {
-	alert( "Passwords do not match" );
+	alert( "А пароли не совпадают" );
 	form.vac_owner_password.focus();
         return false ;
     }
     if (form.vac_owner_name.value == "") {
-	alert( "Please enter your name." );
+	alert( "Пожалуста, введите Ваше имя" );
 	form.vac_owner_name.focus();
         return false ;
     }
+    return true ;
+<% END %>
     return true ;
 }
 function setFocus()

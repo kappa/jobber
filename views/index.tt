@@ -1,7 +1,7 @@
-<h2>If you want to add your own job...</h2>
-You can do it <a href="/add">here</a>
+<h2>Добавить вакансию?</h2>
+Тогда вам <a href="/add">сюда</a>
 
-<h2>List of jobs</h2>
+<h2>Список вакансий</h2>
 
 <table cellspacing="8">
 <% jobs %>
